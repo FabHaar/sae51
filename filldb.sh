@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#rfonction pour emplir la base de données
+#fonction pour emplir la base de données
 
 function insert_utilisateurs {
 	tail -n +2 "utilisateurs.csv" | while IFS=";" read -r nom prenom;
