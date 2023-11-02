@@ -15,14 +15,14 @@ docker run --name SQL_Server \
 echo "Le sgbd prend un petit moment pour être accessible, veuillez patienter un instant"	
 sleep 40          #attente du socket ready
 
+#ETAPE intermediaire :
+echo "vérification des prérequis à la connexion"
+sudo ./bypass_warning.sh
+
 #ETAPE 3 :
 echo "Création de la base de données sur le SGBD..."
 ./create_db.sh
 
-./insert_utilisateurs.sh
-./insert_techniciens.sh
-./insert_machines.sh
-./insert_logiciels.sh
-./insert_interventions.sh
+#ETAPE 4 :
+./filldb.sh
 
-#docker exec -it SQL_Server bash -c "[COMMAND]"
