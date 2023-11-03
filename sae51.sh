@@ -4,7 +4,6 @@
 docker volume create V_BDD
 
 #ETAPE 2 :
-#docker run --name SQL_Server -p 3306:3306 -v V_BDD:/var/lib/mysql -d Serveur_SQL
 echo "Création du conteneur du SGBD"
 docker run --name SQL_Server \
 	-p 3306:3306 \
@@ -24,5 +23,11 @@ echo "Création de la base de données sur le SGBD..."
 ./create_db.sh
 
 #ETAPE 4 :
+echo "Remplissage de la bas de données"
 ./filldb.sh
+
+cd select_sql
+#ETAPE 5 :
+echo "Exemples : "
+
 
