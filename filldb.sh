@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function insert_utilisateurs {
-	tail -n +2 "utilisateurs.csv" | while IFS=";" read -r nom prenom;
+	tail -n +2 "csv/utilisateurs.csv" | while IFS=";" read -r nom prenom;
 	do
 		mysql -u root -h 127.0.0.1 --port=3306 sae51 << EOF
 		INSERT INTO utilisateurs (nom, prenom) VALUES ('$nom', '$prenom');
@@ -10,7 +10,7 @@ EOF
 }
 
 function insert_techniciens {
-	tail -n +2 "techniciens.csv" | while IFS=";" read -r nom prenom;
+	tail -n +2 "csv/techniciens.csv" | while IFS=";" read -r nom prenom;
 	do
 		mysql -u root -h 127.0.0.1 --port=3306 sae51 << EOF
 		INSERT INTO techniciens (nom, prenom) VALUES ('$nom', '$prenom');
@@ -19,7 +19,7 @@ EOF
 }
 
 function insert_machines {
-	tail -n +2 "machines.csv" | while IFS=";" read -r marque os ram date_achat id_utilisateur;
+	tail -n +2 "csv/machines.csv" | while IFS=";" read -r marque os ram date_achat id_utilisateur;
 	do
 		mysql -u root -h 127.0.0.1 --port=3306 sae51 << EOF
 		INSERT INTO machines (marque, os, ram, date_achat, id_utilisateur) VALUES ('$marque', '$os', '$ram', '$date_achat', '$id_utilisateur');
@@ -28,7 +28,7 @@ EOF
 }
 
 function insert_logiciels {
-	tail -n +2 "logiciels.csv" | while IFS=";" read -r nom id_machine version licence;
+	tail -n +2 "csv/logiciels.csv" | while IFS=";" read -r nom id_machine version licence;
 	do
 		mysql -u root -h 127.0.0.1 --port=3306 sae51 << EOF
 		INSERT INTO logiciels (nom, id_machine, version, licence) VALUES ('$nom', '$id_machine', '$version', '$licence');
@@ -37,7 +37,7 @@ EOF
 }
 
 function insert_interventions {
-	tail -n +2 "interventions.csv" | while IFS=";" read -r id_technicien date_intervention id_machine action;
+	tail -n +2 "csv/interventions.csv" | while IFS=";" read -r id_technicien date_intervention id_machine action;
 	do
 		mysql -u root -h 127.0.0.1 --port=3306 sae51 << EOF
 		INSERT INTO interventions (id_technicien, date_intervention, id_machine, action) VALUES ('$id_technicien', '$date_intervention', '$id_machine', '$action');

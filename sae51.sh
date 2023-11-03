@@ -30,4 +30,6 @@ cd select_sql
 #ETAPE 5 :
 echo "Exemples : "
 
+./r1.sh
+
 
