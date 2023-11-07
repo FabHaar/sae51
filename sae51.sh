@@ -7,7 +7,7 @@ then
 fi
 
 #Etape 1 :
-docker build -t img_sae51 -f converter/dockerfile
+docker build -t img_sae51 -f converter/dockerfile .
 ./converter/run_converter.sh
 
 #ETAPE 2 :
