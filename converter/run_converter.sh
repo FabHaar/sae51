@@ -1,8 +1,12 @@
 #!/bin/bash
 
+utilisateur=$(users | grep -v 'root' | awk '{print $1}' | head -1)
+
 mkdir -p shared/
 cp *.dbml shared/
 cp gen_sql.sh shared/
+
+chown -R "$utilisateur":"$utilisateur" shared/
 
 docker run --rm -it \
 	--workdir /srv \
