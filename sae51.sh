@@ -16,20 +16,17 @@ sleep 40          #attente du socket ready
 
 #ETAPE intermediaire :
 echo "vérification des prérequis à la connexion"
-sudo ./bypass_warning.sh
+./bypass_warning.sh
 
 #ETAPE 3 :
 echo "Création de la base de données sur le SGBD..."
 ./create_db.sh
 
 #ETAPE 4 :
-echo "Remplissage de la bas de données"
+echo "Remplissage de la base de données"
 ./filldb.sh
 
-cd select_sql
+
 #ETAPE 5 :
-echo "Exemples : "
-
-./r1.sh
-
-
+cd select_sql
+./exemples.sh
