@@ -1,10 +1,4 @@
 #!/bin/bash
-#test si le script est bien lancé avec les droits super-utilisateur
-if [ $(whoami) != 'root' ];
-then
-	echo "erreur il faut lancer le script avec les droits super-utilisateur"
-	exit 1
-fi
 
 #Etape 1 :
 docker build -t img_sae51 -f converter/Dockerfile .
