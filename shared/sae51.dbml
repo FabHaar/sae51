@@ -31,7 +31,7 @@ Table interventions {
 	id int [pk,increment]
 	id_technicien int
 	date_intervention date
-	id_machine
+	id_machine int
 	action varchar
 }
 

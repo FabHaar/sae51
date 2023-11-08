@@ -8,5 +8,5 @@ WORKDIR /srv
 RUN sed s/this.table.settings?.headercolor/this.table.settings.headercolor/ /usr/local/lib/node_modules/@softwaretechnik/dbml-renderer/lib/renderer.js > /tmp/renderer.js
 RUN cp /tmp/renderer.js /usr/local/lib/node_modules/@softwaretechnik/dbml-renderer/lib/renderer.js
 COPY gen_sql.sh /
-RUN ls /
+RUN ls -l /
 CMD ./gen_sql.sh
