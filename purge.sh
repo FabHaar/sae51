@@ -6,3 +6,4 @@ docker stop SQL_Server
 
 docker rm SQL_Server
 
+rm -r shared/

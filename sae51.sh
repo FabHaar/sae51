@@ -7,7 +7,7 @@ then
 fi
 
 #Etape 1 :
-docker build -t img_sae51 -f converter/dockerfile .
+docker build -t img_sae51 -f converter/Dockerfile .
 ./converter/run_converter.sh
 
 #ETAPE 2 :
@@ -25,8 +25,8 @@ echo "Le sgbd prend un petit moment pour être accessible, veuillez patienter un
 sleep 40          #attente du socket ready
 
 #ETAPE intermediaire :
-echo "vérification des prérequis à la connexion"
-./bypass_warning.sh
+#echo "vérification des prérequis à la connexion"
+#./bypass_warning.sh
 
 #ETAPE 4 :
 echo "Création de la base de données sur le SGBD..."
