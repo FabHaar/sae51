@@ -22,6 +22,8 @@ sleep 40          #attente du socket ready
 #echo "vérification des prérequis à la connexion"
 #./bypass_warning.sh
 
+echo "CREATE DATABASE sae51; USE sae51;" | cat - shared/sae51.sql > shared/sae51.sql
+
 #ETAPE 4 :
 echo "Création de la base de données sur le SGBD..."
 ./create_db.sh

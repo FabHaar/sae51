@@ -14,7 +14,7 @@ docker run --rm -it \
 	img_sae51
 
 #apt-get -y install imagemagick
-echo "j'ai fini"
+
 
 cd shared
 for a in *.svg
