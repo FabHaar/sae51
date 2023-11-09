@@ -16,7 +16,7 @@ docker run --name SQL_Server \
 	-d mysql
 
 echo "Le sgbd prend un petit moment pour être accessible, veuillez patienter un instant"	
-sleep 40          #attente du socket ready
+sleep 5          #attente du socket ready
 
 #ETAPE intermediaire :
 #echo "vérification des prérequis à la connexion"
