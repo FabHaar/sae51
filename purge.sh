@@ -7,3 +7,5 @@ docker stop SQL_Server
 docker rm SQL_Server
 
 rm -r shared/
+
+#docker rmi img_sae51

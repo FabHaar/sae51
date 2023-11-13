@@ -4,6 +4,7 @@
 #chown -R "$utilisateur":"$utilisateur" shared/
 
 mkdir -p shared/
+
 cp *.dbml shared/
 cp gen_sql.sh shared/
 
@@ -23,4 +24,5 @@ do
 	echo "converting $name"
 	convert $a $name.png
 done
+
 cd ..
